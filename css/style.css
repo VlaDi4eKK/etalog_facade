@@ -56,11 +56,11 @@ html, body {
   width: calc(100% / 2);
   z-index: 50;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: 50%;
   clip-path: polygon(35% 0, 90% 0, 65% 100%, 10% 100%);
 }
@@ -87,10 +87,17 @@ html, body {
   background-image: url(../img/bg-market.jpg);
 }
 .columns_item:hover {
+  background-size: auto 105%;
   clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
 }
 .columns_item:hover .columns_item-button {
   transform: scale(1);
+}
+.columns_item:hover .columns_item-title {
+  transform: translateX(-50%) translateY(-100%);
+}
+.columns_item:hover .columns_item-subtitle {
+  opacity: 1;
 }
 .columns_item-title {
   position: absolute;
@@ -101,6 +108,23 @@ html, body {
   font-size: 2rem;
   line-height: 1;
   transform: translateX(-50%);
+  transition: transform 0.6s;
+}
+.columns_item-subtitle {
+  opacity: 0;
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  font-family: Roboto, sans-serif;
+  color: #FFF;
+  font-size: 1rem;
+  line-height: 1.5;
+  transform: translateX(-50%);
+  transition: opacity 1s;
+}
+.columns_item-subtitle ul {
+  list-style: none;
 }
 .columns_item-button {
   width: 200px;
@@ -112,7 +136,7 @@ html, body {
   justify-content: center;
   transform: scale(0);
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 .columns_item-button:hover:before {
   transform: scale(1.2);
@@ -140,9 +164,16 @@ html, body {
 .columns_item--opened:hover {
   z-index: 99;
   clip-path: polygon(35% 0, 90% 0, 65% 100%, 10% 100%);
+  background-size: auto 100%;
 }
 .columns_item--opened:hover .columns_item-button {
   transform: scale(0.6) rotate(45deg);
+}
+.columns_item--opened:hover .columns_item-title {
+  transform: translateX(-50%);
+}
+.columns_item--opened:hover .columns_item-subtitle {
+  opacity: 0;
 }
 .columns_item--opened .columns_item-button {
   transform: scale(0.6) rotate(45deg);
@@ -208,13 +239,19 @@ html, body {
 .content-slide.active {
   opacity: 1;
 }
-.content-slide_text {
+.content-slide_text h3 {
   font-family: "Futura PT", sans-serif;
-  font-size: 20px;
+  font-size: 1.6rem;
   line-height: 1.4;
-  text-align: right;
   padding-right: 52px;
   color: #FFF;
+}
+.content-slide_text p {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #FFF;
+  opacity: 0.8;
 }
 .content-slide_image {
   width: 300px;
@@ -254,6 +291,27 @@ html, body {
   background: #FFFFFF;
   color: #124aac;
 }
+.content_buttons {
+  margin-top: 128px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_buttons .label {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+}
+.content_buttons .mobile_button {
+  width: 195px;
+  margin-right: 50px;
+  position: relative;
+}
+.content_buttons .mobile_button img {
+  display: block;
+  width: 100%;
+}
 .content_button {
   display: block;
   border: 1px solid #FFF;
@@ -262,7 +320,6 @@ html, body {
   padding: 1rem;
   font-size: 1rem;
   text-decoration: none;
-  margin-top: 128px;
   cursor: pointer;
   background-color: #124aac;
   transition: background-color 0.4s;
