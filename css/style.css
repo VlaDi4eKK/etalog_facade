@@ -14,6 +14,10 @@ html, body {
 
 .header {
   padding: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
 }
 .header_burger {
   margin-right: 12px;
@@ -37,82 +41,66 @@ html, body {
 }
 
 .columns {
-  left: 125px;
   top: 0;
-  width: 90%;
+  width: 100%;
   height: 100%;
   min-width: 1440px;
   min-height: 500px;
   position: absolute;
 }
 .columns_item {
-  flex-basis: calc(100% / 3);
+  outline: 1px solid red;
   height: 100%;
-  transform: skewX(-15deg);
   position: absolute;
-  overflow: hidden;
   top: 0;
-  width: calc(100% / 3);
+  width: calc(100% / 2);
   z-index: 50;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.columns_item--logistics {
-  left: 0;
-}
-.columns_item--transport {
-  left: calc(100% / 3);
-}
-.columns_item--market {
-  left: calc((100% / 3) * 2);
-}
-.columns_item:hover {
-  z-index: 99;
-  width: calc((100% / 3) + 150px);
-}
-.columns_item:hover .columns_item-button {
-  transform: scale(1) skewX(15deg);
-}
-.columns_item-content {
-  transform: skewX(15deg);
-  position: absolute;
-  top: 0;
-  left: -30%;
-  right: -30%;
-  height: 100%;
   background-size: cover;
   background-position: 50%;
+  clip-path: polygon(35% 0, 90% 0, 65% 100%, 10% 100%);
 }
-.columns_item-content:before {
+.columns_item:before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
   background-image: linear-gradient(to bottom, transparent, #000);
-  opacity: 0.6;
+  opacity: 0.4;
 }
-.columns_item-content--logistics {
-  background-position: 20% 50%;
+.columns_item--logistics {
+  left: 0;
   background-image: url(../img/bg-logistics.jpg);
 }
-.columns_item-content--transport {
+.columns_item--transport {
+  left: calc(100% / 2);
+  transform: translateX(-45%);
   background-image: url(../img/bg-transport.jpg);
 }
-.columns_item-content--market {
+.columns_item--market {
+  left: calc((100% / 2) * 2);
+  transform: translateX(-90%);
   background-image: url(../img/bg-market.jpg);
+}
+.columns_item:hover {
+  clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+}
+.columns_item:hover .columns_item-button {
+  transform: scale(1);
 }
 .columns_item-title {
   position: absolute;
-  left: 50%;
+  left: 40%;
   bottom: 10%;
   font-family: "Futura PT", sans-serif;
   color: #FFF;
   font-size: 2rem;
   line-height: 1;
-  transform: translateX(-50%) skewX(15deg);
+  transform: translateX(-50%);
 }
 .columns_item-button {
   width: 200px;
@@ -122,7 +110,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0) skewX(15deg);
+  transform: scale(0);
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -147,23 +135,25 @@ html, body {
   z-index: 99;
   left: 0;
   cursor: default;
+  transform: translateX(0);
 }
 .columns_item--opened:hover {
   z-index: 99;
-  width: calc((100% / 3));
+  clip-path: polygon(35% 0, 90% 0, 65% 100%, 10% 100%);
 }
 .columns_item--opened:hover .columns_item-button {
-  transform: scale(0.6) skewX(15deg) rotate(45deg);
+  transform: scale(0.6) rotate(45deg);
 }
 .columns_item--opened .columns_item-button {
-  transform: scale(0.6) skewX(15deg) rotate(45deg);
+  transform: scale(0.6) rotate(45deg);
 }
 .columns_item--opened .columns_item-button:hover {
-  transform: scale(0.8) skewX(15deg) rotate(45deg);
+  transform: scale(0.8) rotate(45deg);
 }
 .columns_item--hidden {
   z-index: 10;
   left: 0;
+  transform: translateX(0);
 }
 
 .content {
