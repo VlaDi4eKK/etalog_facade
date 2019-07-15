@@ -93,6 +93,7 @@ html, body {
     &--logistics {
       left: 0;
       //transform: translateX(35%);
+      background-position: 20% 50%;
       background-image: url(../img/bg-logistics.jpg);
     }
 
@@ -397,24 +398,29 @@ html, body {
   }
 
   &_button {
-    //border-radius: 30px;
-    display: block;
-    border: 1px solid rgba(255,255,255,0.5);
-    color: #FFF;
+    background-color:#44c767;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
     font-family: "Futura PT", sans-serif;
-    padding: 1rem;
-    font-size: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    //background-color: #124aac;
-    background-image: linear-gradient(to bottom, transparent, #000);
-    transition: background-color 0.4s;
-    box-shadow: 0px 15px 30px 0px rgba(53, 46, 179, 1);
+    font-size:17px;
+    padding:18px 30px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #2f6627;
 
     &:hover {
-      background-image: linear-gradient(to bottom, #000, transparent);
+      background-color:#5cbf2a;
+    }
+    &:active {
+      position:relative;
+      top:1px;
     }
   }
+
 }
 
 
