@@ -314,11 +314,10 @@ html, body {
   width: 100%;
 }
 .content_button {
-  background-color: #44c767;
+  background-color: #FF851B;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   border-radius: 30px;
-  border: 1px solid #18ab29;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -326,10 +325,10 @@ html, body {
   font-size: 17px;
   padding: 18px 30px;
   text-decoration: none;
-  text-shadow: 0 1px 0 #2f6627;
+  text-shadow: 0 1px 0 #cf681b;
 }
 .content_button:hover {
-  background-color: #5cbf2a;
+  background-color: #f9801b;
 }
 .content_button:active {
   position: relative;
