@@ -3,194 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <title>ETALOG - програмный комплекс для организации торговли и доставки</title>
-  <link rel="stylesheet" href="css/style.css" >
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="header">
-    <div class="header_logo">
-      <div class="header_burger">☰</div>
-      <a href="index.html">ETALOG</a>
+<header class="header">
+  <div class="header_logo">
+    <div id="burger-button" class="header_burger">☰</div>
+    <a href="index.html">ETALOG</a>
+  </div>
+</header>
+<aside id="burger-menu" class="burger-menu">
+  <ul>
+    <li><a href="#" data-content="logistics">Управление логистикой</a></li>
+    <li><a href="#" data-content="transport">Управление транспортом</a></li>
+    <li><a href="#" data-content="market">B2B маркет</a></li>
+    <li><a href="#">Приложение для водителей</a></li>
+  </ul>
+  <ul>
+    <li><a href="#">О компании</a></li>
+    <li><a href="#">Контакты</a></li>
+  </ul>
+</aside>
+<div class="columns">
+  <div class="columns_item columns_item--logistics js_columns_item"
+       data-content="logistics-content">
+    <div class="columns_item-button"></div>
+    <div class="columns_item-title">
+      Управление<br/>логистикой
     </div>
-  </header>
-  <div class="columns">
-    <div class="columns_item columns_item--logistics js_columns_item" data-content="logistics-content">
-      <div class="columns_item-button"></div>
-      <div class="columns_item-title">
-        Управление<br/>логистикой
-      </div>
-      <div class="columns_item-subtitle">
-        <ul>
-          <li>Онлайн-мониторинг ТС и мобильных устройств</li>
-          <li>Планирование и управление перевозками</li>
-          <li>Контроль работы водителей на каждом этапе</li>
-        </ul>
-      </div>
-    </div>
-    <div class="columns_item columns_item--transport js_columns_item" data-content="transport-content">
-      <div class="columns_item-button"></div>
-      <div class="columns_item-title">Управление<br/>транспортом</div>
-      <div class="columns_item-subtitle">
-        <ul>
-          <li>Учет собственного и наемного транспорта</li>
-          <li>Расчет рентабельности автопарка</li>
-          <li>Учет ГСМ и  пробега</li>
-        </ul>
-      </div>
-    </div>
-    <div class="columns_item columns_item--market js_columns_item" data-content="market-content">
-      <div class="columns_item-button"></div>
-      <div class="columns_item-title">B2B<br/>маркет</div>
-      <div class="columns_item-subtitle">
-        <ul>
-          <li>Покупка и продажа b2b товаров и услуг</li>
-          <li>Удобный поиск наемного транспорта и заказов на
-            перевозку</li>
-          <li>Проведение тендеров, конкурентные закупки</li>
-        </ul>
-      </div>
+    <div class="columns_item-subtitle">
+      <ul>
+        <li>Онлайн-мониторинг ТС и мобильных устройств</li>
+        <li>Планирование и управление перевозками</li>
+        <li>Контроль работы водителей на каждом этапе</li>
+      </ul>
     </div>
   </div>
+  <div class="columns_item columns_item--transport js_columns_item"
+       data-content="transport-content">
+    <div class="columns_item-button"></div>
+    <div class="columns_item-title">Управление<br/>транспортом</div>
+    <div class="columns_item-subtitle">
+      <ul>
+        <li>Учет собственного и наемного транспорта</li>
+        <li>Расчет рентабельности автопарка</li>
+        <li>Учет ГСМ и пробега</li>
+      </ul>
+    </div>
+  </div>
+  <div class="columns_item columns_item--market js_columns_item" data-content="market-content">
+    <div class="columns_item-button"></div>
+    <div class="columns_item-title">B2B<br/>маркет</div>
+    <div class="columns_item-subtitle">
+      <ul>
+        <li>Покупка и продажа b2b товаров и услуг</li>
+        <li>Удобный поиск наемного транспорта и заказов на
+          перевозку
+        </li>
+        <li>Проведение тендеров, конкурентные закупки</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-  <div id="logistics-content" class="content content--logistics">
-    <div class="content-slides">
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Онлайн мониторинг</h3>
-          <p>
-            Уникальная система спутникового мониторинга позволяет отслеживать перемещение ТС
-            на карте в режиме реального времени, отслеживать пробег, расход топлива, посещение
-            определенных географических зон, мест стоянок, фактов заправок и слива топлива.
-            Система позволяет принимать данные из разных источников, а также ретранслировать при
-            необходимости на сервера заказчиков.
-          </p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/1">
-        </div>
-      </div>
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Управление перевозками</h3>
-          <p>
-            Специальная разработка для диспетчеров и владельцев автопарка. Позволяет
-            контролировать работу водителей на каждом этапе доставки и дает возможность
-            предоставления удаленного доступа заказчикам к отслеживанию статуса и
-            местоположения груза.
-          </p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/2">
-        </div>
-      </div>
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Оформление документов</h3>
-          <p>
-            Формирование и печать путевых листов и товарно-транспортных накладных. Контроль за
-            своевременным оформлением транспортной документации.
-          </p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/3">
-        </div>
+<div id="logistics-content" class="content content--logistics">
+  <video muted autoplay loop playsinline class="content_video">
+    <source src="./video/logistics.mp4" type="video/mp4">
+  </video>
+  <div class="content_overlay">
+    <div class="content_info">
+      <div class="content_header">Онлайн мониторинг</div>
+      <div class="content_text">
+        <p>Уникальная система спутникового мониторинга позволяет отслеживать перемещение ТС
+          на карте в режиме реального времени, отслеживать пробег, расход топлива, посещение
+          определенных географических зон, мест стоянок, фактов заправок и слива топлива.</p>
+        <p>Система позволяет принимать данные из разных источников, а также ретранслировать при
+          необходимости на сервера заказчиков.</p>
       </div>
     </div>
     <div class="content_buttons">
-      <a href="#" class="mobile_button">
-<!--        <div class="label">Приложение для водителя</div>-->
-        <img src="./img/google-play-badge.png">
-      </a>
       <a href="http://logistic.etalog.ru" class="content_button ripplelink">НАЧАТЬ РАБОТАТЬ</a>
     </div>
-    <div class="content_pagination">
-      <div class="content_pagination-item active">1</div>
-      <div class="content_pagination-item">2</div>
-      <div class="content_pagination-item">3</div>
-    </div>
   </div>
-
-  <div id="transport-content" class="content content--transport">
-    <div class="content-slides">
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Учет транспорта</h3>
-          <p>Учет собственного и наемного транспорта, контроль за эксплуатацией автопарка</p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/4">
-        </div>
-      </div>
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Расчет рентабельности</h3>
-          <p>Расчет рентабельности автопарка и каждого транспортного средства</p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/5">
-        </div>
-      </div>
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Учет топлива и агрегатов</h3>
-          <p>Нормативный и фактический расход, заправки ГСМ, учет всех агрегатов ТС</p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/6">
-        </div>
-      </div>
-    </div>
-    <div class="content_buttons">
-      <a href="#" class="content_button ripplelink">НАЧАТЬ РАБОТАТЬ</a>
-    </div>
-    <div class="content_pagination">
-      <div class="content_pagination-item active">1</div>
-      <div class="content_pagination-item">2</div>
-      <div class="content_pagination-item">3</div>
-    </div>
-  </div>
-
-  <div id="market-content" class="content content--market">
-    <div class="content-slides">
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Перевозки</h3>
-          <p>Удобный поиск перевозчиков и заказчиков на перевозку.</p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/7">
-        </div>
-      </div>
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Сделки</h3>
-          <p>Оптовая покупка и продажа товаров b2b рынка.</p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/8">
-        </div>
-      </div>
-      <div class="content-slide">
-        <div class="content-slide_text">
-          <h3>Тендеры</h3>
-          <p>Проведение тендерных закупок и участие в тендерах.</p>
-        </div>
-        <div class="content-slide_image">
-          <img src="http://lorempixel.com/600/600/transport/9">
-        </div>
-      </div>
-    </div>
-    <div class="content_buttons">
-      <a href="http://market.tabitum.ru" class="content_button ripplelink">НАЧАТЬ РАБОТАТЬ</a>
-    </div>
-    <div class="content_pagination">
-      <div class="content_pagination-item active">1</div>
-      <div class="content_pagination-item">2</div>
-      <div class="content_pagination-item">3</div>
-    </div>
-  </div>
+</div>
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

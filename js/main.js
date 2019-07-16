@@ -9,8 +9,30 @@ $(document).ready(function(){
   //     $(this).removeClass('hovered');
   //   });
 
+  $('#burger-button').on('click', function() {
+    var $menu = $('#burger-menu');
+    var $button = $(this);
+
+    if($menu.hasClass('active')) {
+      $menu.removeClass('active');
+      $button.html('☰');
+    } else {
+      $menu.addClass('active');
+      $button.html('&times;');
+    }
+  });
+
+  $('#burger-menu a[data-content]').on('click', function(e) {
+    e.preventDefault();
+    var content = $(this).data('content');
+
+    $('.columns_item--' + content).trigger('click');
+    $('#burger-button').trigger('click');
+  });
+
+
   $('.js_columns_item').on('click', function() {
-    if($(this).hasClass('columns_item--opened')) { // TODO: сделать клик на закрывание только по кнопке
+    if($(this).hasClass('columns_item--opened')) {
       $('.js_columns_item').removeClass('columns_item--hidden');
       $('.js_columns_item').removeClass('columns_item--opened');
       $('.content').removeClass('visible');
