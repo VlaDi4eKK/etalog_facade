@@ -32,7 +32,7 @@ html, body {
 .header_logo {
   font-family: "Futura PT", sans-serif;
   color: #FFF;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   display: flex;
   align-items: center;
 }
@@ -50,12 +50,12 @@ html, body {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 300px;
+  width: calc(100% / 3);
   z-index: 90;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-  background-color: #191c22;
-  border-right: 1px solid #292f35;
+  background-color: #124aac;
+  clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
   padding: 80px 0;
 }
 .burger-menu.active {
@@ -65,13 +65,12 @@ html, body {
   list-style: none;
   padding: 32px 32px 32px 60px;
   margin: 0;
-  border-bottom: 1px solid #292f35;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .burger-menu ul li {
   color: #FFF;
   font-family: Roboto, sans-serif;
-  font-size: 20px;
-  text-transform: uppercase;
+  font-size: 18px;
   cursor: pointer;
   margin-bottom: 16px;
   position: relative;
@@ -268,16 +267,35 @@ html, body {
   transform: translateY(0);
 }
 .content_overlay {
+  padding: 32px 0;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.content_description {
+  padding: 32px;
+  padding-left: 20%;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: #F8F8F8;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.content_description.active {
+  transform: translateX(0);
 }
 .content_video {
   height: 100%;
@@ -286,20 +304,30 @@ html, body {
   top: 0;
 }
 .content_info {
+  position: relative;
   max-width: 60%;
   margin-bottom: 32px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #000;
-  padding: 32px;
+  color: #FFF;
   transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform: translateY(-100%);
 }
 .content_header {
+  background: rgba(247, 246, 244, 0.6);
+  /* clip-path: polygon(10px 0, 100% 0%, calc(100% - 10px) 100%, 0% 100%); */
+  padding: 16px;
   font-family: "Futura PT", sans-serif;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1;
   margin-bottom: 32px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  color: #000;
+  letter-spacing: 1px;
+  transform: skewX(-15deg);
+}
+.content_header span {
+  display: block;
+  transform: skewX(15deg);
 }
 .content_text {
   font-family: Roboto, sans-serif;
@@ -380,25 +408,43 @@ html, body {
 .content_buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform: translateY(300%);
 }
 .content_buttons .label {
-  color: #FFFFFF;
+  white-space: nowrap;
+  color: #000;
   font-size: 16px;
   font-family: Roboto, sans-serif;
 }
 .content_buttons .mobile_button {
-  width: 195px;
   margin-right: 50px;
   position: relative;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
 }
 .content_buttons .mobile_button img {
   display: block;
-  width: 100%;
+  width: 195px;
+}
+.content_more {
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  margin-left: 50px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+.content_more:hover {
+  text-decoration: none;
 }
 .content_button {
+  white-space: nowrap;
   background-color: #FF851B;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -411,6 +457,7 @@ html, body {
   padding: 18px 30px;
   text-decoration: none;
   text-shadow: 0 1px 0 #cf681b;
+  box-shadow: 0 0 16px #000;
 }
 .content_button:hover {
   background-color: #f9801b;
@@ -418,6 +465,11 @@ html, body {
 .content_button:active {
   position: relative;
   top: 1px;
+}
+.content_label {
+  font-family: Roboto, sans-serif;
+  font-size: 17px;
+  margin-right: 50px;
 }
 
 .ripplelink {

@@ -9,6 +9,12 @@ $(document).ready(function(){
   //     $(this).removeClass('hovered');
   //   });
 
+
+  $('.content_more').on('click', function(){
+    $moreContent = $(this).closest('.content').find('.content_description');
+    $moreContent.addClass('active');
+  });
+
   $('#burger-button').on('click', function() {
     var $menu = $('#burger-menu');
     var $button = $(this);
@@ -36,6 +42,7 @@ $(document).ready(function(){
       $('.js_columns_item').removeClass('columns_item--hidden');
       $('.js_columns_item').removeClass('columns_item--opened');
       $('.content').removeClass('visible');
+      $('.content_description').removeClass('active');
     } else {
       $('.js_columns_item').addClass('columns_item--hidden');
       $('.js_columns_item').removeClass('columns_item--opened');
